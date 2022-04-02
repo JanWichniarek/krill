@@ -1,0 +1,20 @@
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=krilldb
+    ports:
+      - "5432:5432"
+    restart: always
+  backend:
+    container_name: backend
+    image: public.ecr.aws/${ECR_REGISTRY_ALIAS}/krill-backend:latest
+    environment:
+      - DB_HOST=postgres
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres

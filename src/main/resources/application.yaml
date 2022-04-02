@@ -1,0 +1,13 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: user
+    password: password
+    jdbc:
+      url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/krilldb
+      max-size: 16
+  container-image:
+    registry: ${ECR_REGISTRY:}
+    group: ${ECR_GROUP:}
+    name: ${ECR_REPOSITORY:krill-backend}
+    tag: ${IMAGE_TAG:}
