@@ -11,3 +11,8 @@ quarkus:
     group: ${ECR_GROUP:}
     name: ${ECR_REPOSITORY:krill-backend}
     tag: ${IMAGE_TAG:}
+  smallrye-openapi:
+    path: /openapi
+  swagger-ui:
+    always-include: true
+    path: /swagger-ui
