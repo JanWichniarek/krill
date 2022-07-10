@@ -10,6 +10,14 @@ quarkus:
     cors:
       ~: true
       methods: 'GET, POST, PUT, DELETE, PATCH, OPTIONS, HEAD'
+#  hibernate-orm:
+#    database:
+#      generation: drop-and-create
+#    log:
+#      sql: true
+  flyway:
+    migrate-at-start: true
+    baseline-on-migrate: true
   container-image:
     registry: ${ECR_REGISTRY:}
     group: ${ECR_GROUP:}
@@ -20,3 +28,7 @@ quarkus:
   swagger-ui:
     always-include: true
     path: /swagger-ui
+  log:
+    level: INFO
+    file:
+      enable: true
