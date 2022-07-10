@@ -14,7 +14,9 @@ class PostgresResource : QuarkusTestResourceLifecycleManager {
 
     override fun start(): Map<String, String> {
         db.start()
-        return mapOf(Pair("quarkus.datasource.jdbc.url", db.jdbcUrl))
+        return mapOf(
+            Pair("quarkus.datasource.jdbc.url", db.jdbcUrl)
+        )
     }
 
     override fun stop() {

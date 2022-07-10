@@ -15,9 +15,8 @@ quarkus:
 #      generation: drop-and-create
 #    log:
 #      sql: true
-  flyway:
+  liquibase:
     migrate-at-start: true
-    baseline-on-migrate: true
   container-image:
     registry: ${ECR_REGISTRY:}
     group: ${ECR_GROUP:}
